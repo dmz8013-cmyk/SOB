@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOB Production — 미디어가 있는 PR 대행사</title>
+    <meta name="description" content="2,300명+ 커뮤니티·유튜브·웹미디어를 보유한 실행형 PR·B2B·B2G·IR 대행사">
+    <meta property="og:title" content="SOB Production — 미디어가 있는 PR 대행사">
+    <meta property="og:description" content="미디어 생태계를 가진 PR·B2B·B2G·IR 대행사">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans KR', -apple-system, sans-serif;
+            background: #0D0D1A;
+            color: #E8E8F0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== COLOR TOKENS ===== */
+        :root {
+            --navy: #0D0D1A;
+            --navy-light: #1A1A2E;
+            --navy-mid: #16213E;
+            --gold: #C87941;
+            --gold-light: #D4965A;
+            --gold-glow: rgba(200, 121, 65, 0.15);
+            --text: #E8E8F0;
+            --text-dim: #9999AA;
+            --text-muted: #666680;
+            --white: #FFFFFF;
+            --card-bg: #12122A;
+            --card-border: rgba(200, 121, 65, 0.12);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(13, 13, 26, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(200, 121, 65, 0.1);
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .nav-logo {
+            font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+            color: var(--white);
+        }
+        .nav-logo span { color: var(--gold); }
+        .nav-cta {
+            background: var(--gold); color: var(--navy);
+            padding: 8px 20px; border-radius: 6px;
+            font-size: 13px; font-weight: 700;
+            transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(200,121,65,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(22,33,62,0.4) 0%, transparent 50%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+        @keyframes heroGlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-2%, -2%); }
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold-glow);
+            border: 1px solid rgba(200,121,65,0.25);
+            color: var(--gold);
+            padding: 6px 16px; border-radius: 100px;
+            font-size: 13px; font-weight: 500;
+            margin-bottom: 24px; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 900; line-height: 1.2;
+            margin-bottom: 20px; letter-spacing: -1px;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold); color: var(--navy);
+            padding: 16px 36px; border-radius: 8px;
+            font-size: 16px; font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 4px 24px rgba(200,121,65,0.3);
+        }
+        .hero-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(200,121,65,0.4);
+        }
+        .hero-cta svg { width: 18px; height: 18px; }
+
+        /* ===== SECTION BASE ===== */
+        .section {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            color: var(--gold);
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 900; line-height: 1.3;
+            margin-bottom: 16px; letter-spacing: -0.5px;
+        }
+        .section-desc {
+            color: var(--text-dim);
+            font-size: 16px; max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 36px 28px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            opacity: 0; transition: opacity 0.4s;
+        }
+        .service-card:hover {
+            border-color: rgba(200,121,65,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+        }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon {
+            width: 48px; height: 48px;
+            background: var(--gold-glow);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 20px; font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            color: var(--text-dim);
+            font-size: 14px; line-height: 1.7;
+        }
+        .service-tag {
+            display: inline-block;
+            background: rgba(200,121,65,0.1);
+            color: var(--gold);
+            padding: 4px 10px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* ===== ECOSYSTEM ===== */
+        .eco-section {
+            background: var(--navy-light);
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .eco-card {
+            text-align: center;
+            padding: 40px 24px;
+            border-radius: 16px;
+            background: rgba(200,121,65,0.04);
+            border: 1px solid rgba(200,121,65,0.08);
+            transition: all 0.3s;
+        }
+        .eco-card:hover {
+            background: rgba(200,121,65,0.08);
+            border-color: rgba(200,121,65,0.2);
+        }
+        .eco-number {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .eco-label {
+            font-size: 15px; font-weight: 500;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .eco-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-section {
+            background: var(--navy);
+        }
+        .form-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 48px 40px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px; font-weight: 600;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+        }
+        .form-group label .req {
+            color: var(--gold);
+            margin-left: 2px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text);
+            font-family: inherit;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(200,121,65,0.1);
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239999AA' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+        .form-group select option {
+            background: var(--navy-light);
+            color: var(--text);
+        }
+        .form-group textarea {
+            min-height: 120px; resize: vertical;
+        }
+        .form-submit {
+            width: 100%;
+            background: var(--gold); color: var(--navy);
+            border: none; border-radius: 8px;
+            padding: 16px; font-size: 16px; font-weight: 700;
+            cursor: pointer; transition: all 0.3s;
+            font-family: inherit;
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+        .form-submit:disabled {
+            opacity: 0.6; cursor: not-allowed; transform: none;
+        }
+        .form-result {
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            font-size: 14px;
+            display: none;
+        }
+        .form-result.success {
+            display: block;
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #22C55E;
+        }
+        .form-result.error {
+            display: block;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #EF4444;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--navy-light);
+            border-top: 1px solid var(--card-border);
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 18px; font-weight: 900;
+            margin-bottom: 16px;
+        }
+        .footer-logo span { color: var(--gold); }
+        .footer-info {
+            color: var(--text-muted);
+            font-size: 13px; line-height: 2;
+        }
+        .footer-links {
+            display: flex; gap: 24px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .footer-links a {
+            color: var(--text-dim);
+            font-size: 13px; font-weight: 500;
+            transition: color 0.3s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .footer-links a:hover { color: var(--gold); }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .nav { padding: 0 16px; }
+            .hero { padding: 100px 20px 60px; }
+            .section { padding: 60px 20px; }
+            .form-container { padding: 32px 20px; }
+            .form-row { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .eco-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .eco-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-logo">SOB <span>Production</span></div>
+        <a href="#contact" class="nav-cta">상담 신청</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">PR · B2B · B2G · IR</div>
+        <h1>미디어가 있는<br>PR 대행사, <em>SOB Production</em></h1>
+        <p class="hero-sub">2,300명+ 커뮤니티 · 유튜브 · 웹미디어를 보유한<br>실행형 대행사입니다</p>
+        <a href="#contact" class="hero-cta">
+            무료 상담 신청하기
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">우리가 제공하는 서비스</h2>
+    <p class="section-desc">전략 수립부터 실행까지, 미디어 생태계와 결합된 통합 솔루션</p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">📰</div>
+            <h3>PR 대행</h3>
+            <p>보도자료 작성·배포, 언론 관계 관리, 미디어 트레이닝까지. 단순 배포가 아닌 전략적 미디어 노출을 설계합니다.</p>
+            <span class="service-tag">보도자료 · 언론관계 · 미디어 트레이닝</span>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🏛️</div>
+            <h3>B2B · B2G 컨설팅</h3>
+            <p>정부·공공기관·기업 대상 전략 컨설팅. 사업 기획부터 제안서, 관계 구축까지 원스톱으로 지원합니다.</p>
+            <span class="service-tag">정부과제 · 공공사업 · 기업제휴</span>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>IR 대행</h3>
+            <p>투자자 관계 관리, IR 자료 제작, 투자 유치 전략 수립. 스타트업부터 중견기업까지 맞춤 IR 솔루션을 제공합니다.</p>
+            <span class="service-tag">투자유치 · IR자료 · 기업가치</span>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🐕</div>
+            <h3>누렁이 생태계 광고·협찬</h3>
+            <p>카카오톡 오픈채팅 2,300명+, 유튜브 채널, nr2.kr 웹미디어를 통합한 광고 패키지. 실제 도달하는 미디어입니다.</p>
+            <span class="service-tag">커뮤니티 · 유튜브 · 웹미디어</span>
+        </div>
+    </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section class="eco-section">
+    <div class="section" id="ecosystem">
+        <div class="section-label">Ecosystem</div>
+        <h2 class="section-title">누렁이 미디어 생태계</h2>
+        <p class="section-desc">직접 운영하는 미디어 채널을 통해 실질적인 도달과 영향력을 제공합니다</p>
+
+        <div class="eco-grid">
+            <div class="eco-card">
+                <div class="eco-number">2,300+</div>
+                <div class="eco-label">커뮤니티 멤버</div>
+                <div class="eco-sub">카카오톡 · 텔레그램</div>
+            </div>
+            <div class="eco-card">
+                <div class="eco-number">AESA</div>
+                <div class="eco-label">유튜브 채널</div>
+                <div class="eco-sub">AI · 국제정치 · 문화</div>
+            </div>
+            <div class="eco-card">
+                <div class="eco-number">nr2.kr</div>
+                <div class="eco-label">웹미디어</div>
+                <div class="eco-sub">뉴스 · 커뮤니티 · 팩트체크</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="section">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">무료 상담 신청</h2>
+        <p class="section-desc">아래 양식을 작성해주시면 영업일 기준 24시간 이내에 연락드리겠습니다</p>
+
+        <div class="form-container">
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>회사명 <span class="req">*</span></label>
+                        <input type="text" name="company" required placeholder="회사명을 입력하세요">
+                    </div>
+                    <div class="form-group">
+                        <label>담당자명 <span class="req">*</span></label>
+                        <input type="text" name="name" required placeholder="담당자 성함">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>연락처 <span class="req">*</span></label>
+                        <input type="tel" name="phone" required placeholder="010-0000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>이메일 <span class="req">*</span></label>
+                        <input type="email" name="email" required placeholder="email@company.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>문의 유형 <span class="req">*</span></label>
+                    <select name="inquiry_type" required>
+                        <option value="" disabled selected>문의 유형을 선택하세요</option>
+                        <option value="PR 대행">PR 대행</option>
+                        <option value="B2B·B2G 컨설팅">B2B · B2G 컨설팅</option>
+                        <option value="IR 대행">IR 대행</option>
+                        <option value="광고·협찬 패키지">광고 · 협찬 패키지</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>문의 내용 <span class="req">*</span></label>
+                    <textarea name="content" required placeholder="프로젝트 개요, 예산, 일정 등을 자유롭게 적어주세요"></textarea>
+                </div>
+                <button type="submit" class="form-submit" id="submitBtn">무료 상담 신청하기</button>
+                <div id="formResult" class="form-result"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-logo">SOB <span>Production</span></div>
+    <div class="footer-info">
+        대표: 박종원<br>
+        이메일: dmz8013@gmail.com
+    </div>
+    <div class="footer-links">
+        <a href="https://nr2.kr" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/></svg>
+            nr2.kr
+        </a>
+        <a href="https://youtube.com/@nureongi-aesa" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/></svg>
+            누렁이 AESA
+        </a>
+    </div>
+</footer>
+
+<script>
+async function submitForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const result = document.getElementById('formResult');
+    const form = document.getElementById('contactForm');
+
+    btn.disabled = true;
+    btn.textContent = '전송 중...';
+    result.className = 'form-result';
+    result.style.display = 'none';
+
+    try {
+        const res = await fetch('/submit', {
+            method: 'POST',
+            body: new FormData(form)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+            result.className = 'form-result success';
+            result.textContent = data.message;
+            result.style.display = 'block';
+            form.reset();
+        } else {
+            throw new Error(data.message);
+        }
+    } catch (err) {
+        result.className = 'form-result error';
+        result.textContent = err.message || '오류가 발생했습니다. dmz8013@gmail.com으로 직접 문의해주세요.';
+        result.style.display = 'block';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '무료 상담 신청하기';
+    }
+}
+</script>
+
+</body>
+</html>
