@@ -102,6 +102,32 @@
         .nav-cta:hover { opacity: 0.85; }
 
         /* ===== HERO ===== */
+        .hero-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+        /* dot grid pattern */
+        .hero-wrap::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            z-index: 0;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 80%);
+        }
+        /* blue glow bottom-left */
+        .hero-wrap::after {
+            content: '';
+            position: absolute;
+            bottom: -10%; left: -5%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(79,142,247,0.12) 0%, rgba(79,142,247,0.04) 40%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
         .hero {
             min-height: 100vh;
             display: grid;
@@ -113,20 +139,11 @@
             margin: 0 auto;
             position: relative;
         }
-        /* glow orbs */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 15%; left: 10%;
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 70%);
-            filter: blur(40px);
-            pointer-events: none;
-        }
+        /* purple glow top-right */
         .hero::after {
             content: '';
             position: absolute;
-            bottom: 20%; right: 5%;
+            top: 15%; right: -5%;
             width: 400px; height: 400px;
             background: radial-gradient(circle, rgba(167,139,250,0.06) 0%, transparent 70%);
             filter: blur(40px);
@@ -284,7 +301,7 @@
 
         /* ===== TRUST NUMBERS (NEW) ===== */
         .trust-section {
-            background: var(--bg-elevated);
+            background: #111118;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             position: relative;
@@ -308,7 +325,7 @@
             overflow: hidden;
         }
         .trust-item {
-            background: var(--bg-elevated);
+            background: #111118;
             padding: 64px 32px;
             text-align: center;
             transition: background 0.3s;
@@ -612,6 +629,7 @@
 </nav>
 
 <!-- HERO -->
+<div class="hero-wrap">
 <section class="hero">
     <div class="hero-left">
         <div class="hero-badge rv"><span class="dot"></span>PR · B2B · B2G · IR</div>
@@ -645,6 +663,8 @@
         </div>
     </div>
 </section>
+
+</div><!-- /hero-wrap -->
 
 <!-- TRUST NUMBERS -->
 <section class="trust-section">
@@ -763,8 +783,8 @@
 <section class="contact-bg" id="contact">
     <div class="section">
         <div class="section-label rv">Contact</div>
-        <h2 class="section-title rv">프로젝트를<br>시작해볼까요?</h2>
-        <p class="section-desc rv">양식을 작성해주시면 영업일 기준 24시간 이내 연락드립니다</p>
+        <h2 class="section-title rv">지금 바로<br>상담을 시작하세요</h2>
+        <p class="section-desc rv">24시간 내 담당자가 직접 연락드립니다</p>
 
         <div class="form-wrap rv">
             <form id="contactForm" onsubmit="submitForm(event)">
